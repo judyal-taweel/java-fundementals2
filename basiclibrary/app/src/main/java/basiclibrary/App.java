@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 public class App {
 
-    1. fuction to get the min and max temp
+    //1. fuction to get the min and max temp
     public static int[] getMinAndMax (int[][] arr)
     {
         int min =100;
@@ -36,6 +36,7 @@ public class App {
     // 2. function tally ro get the most votes
     public  static String tally (List <String> votes)
     {
+        int maxCount=0;
         int count =0;
         String word="";
         //Determine the most repeated word in a file
@@ -47,7 +48,11 @@ public class App {
                     count++;
                 }
             }
-            word = votes.get(i);
+            if(count > maxCount){
+                maxCount = count;
+                word = votes.get(i);
+
+            }
         }
         return  word ;
     }
