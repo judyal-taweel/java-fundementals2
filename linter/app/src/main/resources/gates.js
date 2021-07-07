@@ -41,7 +41,7 @@ function zadd1(a,b,z) {
     j = or(a, nor(b,z));
     k = or(b, nor(a,z))
     l = or(z, nor(a,b))
-    console.log("jkl", j, k, l);
+    console.log("jkl", j, k, l)
     ones = xor(j, xor(k, l));
     return {ones, zf};
 }
