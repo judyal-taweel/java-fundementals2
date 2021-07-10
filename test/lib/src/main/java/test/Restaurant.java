@@ -1,18 +1,17 @@
 package test;
 
-//import java.util.ArrayList;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Restaurant extends Review {
+public class Restaurant<T> extends Review {
+
     private String name;
-    private int stars;
+    private int starss;
     private int priceCategory;
 
 
-    public Restaurant(String author, String body, int stars) {
-        super(author, body, stars);
+    public Restaurant(String author, String body, int starss) {
+        super(author, body, starss);
     }
 
 
@@ -23,11 +22,11 @@ public class Restaurant extends Review {
     public void setName(String name) {
         this.name = name;
     }
-    public int getStars() {
-        return stars;
+    public int getStarss() {
+        return starss;
     }
-    public void setStars(int stars) {
-        this.stars = stars;
+    public void setStarss(int stars) {
+        this.starss = stars;
     }
     public int getPriceCategory() {
         return priceCategory;
@@ -38,19 +37,21 @@ public class Restaurant extends Review {
 
     public String toString(){
         String result;
-        result= "the Restaurant "+this.name + "has " +this.stars +"stars" + this.priceCategory +"$";
+        result= "the Restaurant "+this.name + "has " +this.starss +"stars" + this.priceCategory +"$";
         return  result;
     }
     public void addReview(Review review){
-        HashMap<String, ArrayList<String>> clientRev=new HashMap<>();
-        ArrayList<String> myrev= new ArrayList<>();
-        myrev.add(review.getAuthor());
-        myrev.add(review.getBody());
-        myrev.add(String.valueOf(review.getStars()));
+        HashMap<T, ArrayList<T>> clientRev=new HashMap<>();
+        ArrayList<T> myrev= new ArrayList<>();
+        myrev.add((T) review.getAuthor());
+        myrev.add((T) review.getBody());
+//        myrev.add(review.setStars(this.getStars()));
+//        myrev.add((T) String.valueOf(review.getStars()));
+//        myrev.add(review.getStars())
 
-        clientRev.put(this.name,myrev);
+
+        clientRev.put((T) this.name,myrev);
         System.out.println(clientRev);
 
     }
-
 }

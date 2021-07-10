@@ -1,15 +1,19 @@
 package test;
 
-public class Review {
+public class Review<T> {
+
     private String author;
     private String body;
     private int stars;
 
-    public Review (String author , String body,int stars ){
+    public Review(String author , String body, int stars ){
         this.author=author;
         this.body=body;
         this.stars=stars;
     }
+
+
+
     public void setAuthor(String author) {
         this.author = author;
     }
